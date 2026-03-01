@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glass Registration Page</title>
+    <link rel="stylesheet" href="register_styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="glass-container">
+        
+        <div class="form-body">
+            <div class="left-section">
+                <h2>Create Account</h2>
+                <form action="#">
+                    
+                    <div class="input-row">
+                        <div class="input-group">
+                            <input type="text" placeholder="First Name" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" placeholder="Last Name" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="tel" placeholder="Mobile Number" pattern="[0-9]{10}" required>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="email" placeholder="Email Address" required>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="text" placeholder="Create Username" required>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="password" placeholder="Create Password" id="passwords" minlength="8" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <input type="password" placeholder="Confirm Password" id="confirms" minlength="8" required>
+                    </div>
+
+                    <button type="submit" class="login-btn" onclick="confirm()">Sign Up</button>
+                </form>
+            </div>
+
+            <div class="separator"></div>
+
+            <div class="right-section">
+                <h2>Or sign up with</h2>
+                
+                <a href="#" class="social-btn google">
+                    <i class="fab fa-google"></i> Sign up with Google
+                </a>
+                
+                <a href="#" class="social-btn microsoft">
+                    <i class="fab fa-microsoft"></i> Sign up with Microsoft
+                </a>
+                
+                <a href="#" class="social-btn github">
+                    <i class="fab fa-github"></i> Sign up with GitHub
+                </a>
+            </div>
+        </div>
+
+        <div class="form-footer">
+            <p>Already have an account? <a href="Login.html">Sign in here</a></p>
+        </div>
+
+    </div>
+
+    <script>
+        function confirm() {
+            const password = document.getElementById('passwords').value;
+            const confirmation = document.getElementById('confirms').value;
+
+            if(password.length >= 8 && confirmation.length >= 8) {
+
+                if(confirmation === password) {
+                    alert("New Password Created");
+                }
+
+                else {
+                    alert("Confirm Password and Input Password does not match !");
+                }
+            }
+
+            else {
+                alert("Password should be of minimum 8 characters");
+            }
+        }
+    </script>
+</body>
+</html>
